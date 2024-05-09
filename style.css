@@ -1,0 +1,144 @@
+/* Quintessential Font for Headings */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Quintessential&display=swap');
+
+/* Nunito Font for the Paragraphs */
+  @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+  
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: black;
+    outline: solid 1px red;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem 10rem;
+    background-image: url("Section\ \ 1\ -\ Backgound.jpg");
+    background-size: cover;
+    height: 100vh;
+    background-position: center;
+    image-rendering:crisp-edges;
+    font-family: "Quintessential", serif;
+}
+
+#heading-container {
+    background-color: rgba(78, 0, 130, 0.6);
+    color: #F8EEEE;
+}
+#heading-container {
+    position: relative;
+    background-color: rgba(78, 0, 130, 0.6);
+    color: #F8EEEE;
+}
+
+#main-content-container {
+    grid-template-columns: 1fr;
+    justify-content: center;
+    gap: 20px;
+}
+
+.article-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: black;
+    height: 80vh;
+}
+
+.image-heading-container {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-heading-container  h1 {
+        font-family: "Quintessential", serif;
+        margin-bottom: 20px;
+        text-align: center;
+        text-wrap: wrap;
+        font-size: 1.5rem;
+        background-color: #FFD700;
+        color: black;
+        margin-top: 2rem;
+        border-radius: 40px;
+        grid-area: 2/3;
+        width: 300px; 
+        justify-content: center;
+        align-items: center;
+}
+
+.image-heading-container img {
+    height: 400px;
+    justify-content: center;
+    align-items: center;
+}
+
+.paragraph-container {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    color: #F4F1DE;
+    font-family: "Nunito Sans", sans-serif;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5rem;
+}
+
+p {
+    max-width: 500px;
+}
+
+/* Swap layout for even children */
+#main-content-container article.article-container:nth-child(even) .image-heading-container {
+    grid-column: 2 / 3; /* Place the image-heading in the second column */
+}
+
+#main-content-container article.article-container:nth-child(even) .paragraph-container {
+    grid-column: 1 / 2; /* Place the paragraph-container in the first column */
+}
+
+#interactive {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+#interactive img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+#interactive:nth-child(1) img {
+    grid-column: 1/2;
+}
+
+#interactive:nth-child(2) img {
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+
+#interactive:nth-child(3) {
+    grid-column: 3/4;
+    grid-row: 2/3;
+}
+
+
+
+
+
+    
+
