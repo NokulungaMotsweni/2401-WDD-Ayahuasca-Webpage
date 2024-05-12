@@ -10,7 +10,7 @@
     padding: 0;
     box-sizing: border-box;
     background-color: black;
-    outline: solid 1px red;
+
 }
 
 header {
@@ -47,7 +47,8 @@ header {
     display: grid;
     grid-template-columns: 1fr 1fr;
     background-color: black;
-    height: 80vh;
+    height: 90vh;
+    overflow-y: auto;
 }
 
 .image-heading-container {
@@ -108,6 +109,26 @@ p {
     grid-column: 1 / 2; /* Place the paragraph-container in the first column */
 }
 
+#main-content-container article.article-container:nth-child(4) .image-heading-container img {
+    position: relative;
+    background-color: transparent;
+
+}
+
+.rotate-animation {
+    animation: rotate 11s linear infinite; /* Continuous rotation animation */
+    transform-origin: center center; /* Rotate around the center of the image */
+}
+
+/* Define the rotation animation */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
 #interactive {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
