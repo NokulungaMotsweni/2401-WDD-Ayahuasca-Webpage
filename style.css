@@ -1,18 +1,20 @@
-/* Quintessential Font for Headings */
+/* Importing fonts */
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Quintessential&display=swap');
 
-/* Nunito Font for the Paragraphs */
-  @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
-
-  
+/* Resetting default styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: black;
-
 }
 
+/* Body styles */
+body {
+    background-color: black;
+    font-family: "Nunito Sans", sans-serif;
+}
+
+/* Header styles */
 header {
     display: flex;
     justify-content: center;
@@ -23,34 +25,79 @@ header {
     background-size: cover;
     height: 100vh;
     background-position: center;
-    image-rendering:crisp-edges;
+    image-rendering: crisp-edges;
     font-family: "Quintessential", serif;
 }
 
+/* Heading container styles */
 #heading-container {
-    background-color: rgba(78, 0, 130, 0.6);
-    color: #F8EEEE;
-}
-#heading-container {
-    position: relative;
-    background-color: rgba(78, 0, 130, 0.6);
-    color: #F8EEEE;
+    color: #0a0a0a;
+    width: 50%;
+    height: 80%;
+    border-radius: 50%;
+    background-color: rgba(106, 13, 173, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 0.1px solid green;
 }
 
+#heading-container h1  {
+    font-size: 4rem;
+    font-weight: 900;
+    background-color: rgba(255, 215, 0, 0.1);
+    color: #33054c;
+    width: 100%;
+    border-radius: 25%;
+}
+
+#heading-container h2 {
+    font-size: 2.5rem;
+    color: #FFD700;
+    background-color: rgba(106, 13, 173, 0.4) !important;
+    border-radius: 25%;
+}
+
+/* Main content container styles */
 #main-content-container {
     grid-template-columns: 1fr;
     justify-content: center;
     gap: 20px;
 }
 
+/* Animation styles */
+.rotate-animation {
+    animation: rotate 11s linear infinite;
+    transform-origin: center center;
+}
+
+/* Keyframe animation definition */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Article container styles */
 .article-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     background-color: black;
     height: 90vh;
-    overflow-y: auto;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.5s ease;
 }
 
+.article-container.opaque {
+    opacity: 1;
+}
+
+/* Image heading container styles */
 .image-heading-container {
     grid-column: 1/2;
     grid-row: 1/2;
@@ -59,22 +106,23 @@ header {
     position: relative;
     align-items: center;
     justify-content: center;
+    transition: opacity 1s ease;
 }
 
-.image-heading-container  h1 {
-        font-family: "Quintessential", serif;
-        margin-bottom: 20px;
-        text-align: center;
-        text-wrap: wrap;
-        font-size: 1.5rem;
-        background-color: #FFD700;
-        color: black;
-        margin-top: 2rem;
-        border-radius: 40px;
-        grid-area: 2/3;
-        width: 300px; 
-        justify-content: center;
-        align-items: center;
+.image-heading-container h1 {
+    font-family: "Quintessential", serif;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+    background-color: #FFD700;
+    color: black;
+    margin-top: 2rem;
+    border-radius: 60px;
+    grid-area: 2/3;
+    width: 300px; 
+    justify-content: center;
+    align-items: center;
+    line-height: 1.2;
 }
 
 .image-heading-container img {
@@ -83,11 +131,11 @@ header {
     align-items: center;
 }
 
+/* Paragraph container styles */
 .paragraph-container {
     grid-column: 2/3;
     grid-row: 1/2;
     color: #F4F1DE;
-    font-family: "Nunito Sans", sans-serif;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -100,66 +148,37 @@ p {
     max-width: 500px;
 }
 
-/* Swap layout for even children */
-#main-content-container article.article-container:nth-child(even) .image-heading-container {
-    grid-column: 2 / 3; /* Place the image-heading in the second column */
-}
-
-#main-content-container article.article-container:nth-child(even) .paragraph-container {
-    grid-column: 1 / 2; /* Place the paragraph-container in the first column */
-}
-
-#main-content-container article.article-container:nth-child(4) .image-heading-container img {
-    position: relative;
-    background-color: transparent;
-
-}
-
-.rotate-animation {
-    animation: rotate 11s linear infinite; /* Continuous rotation animation */
-    transform-origin: center center; /* Rotate around the center of the image */
-}
-
-/* Define the rotation animation */
-@keyframes rotate {
-    from {
-        transform: rotate(0deg);
+/* Responsive styles */
+@media (max-width: 800px) {
+    header {
+        padding: 1rem 2rem;
     }
-    to {
-        transform: rotate(360deg);
+
+    #heading-container {
+        height: 50%;
     }
-}
-#interactive {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-}
 
-#interactive img {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin: 10px;
-}
-
-#interactive:nth-child(1) img {
-    grid-column: 1/2;
-}
-
-#interactive:nth-child(2) img {
-    grid-column: 2/3;
-    grid-row: 2/3;
-}
-
-#interactive:nth-child(3) {
-    grid-column: 3/4;
-    grid-row: 2/3;
-}
-
-
-
-
-
+    #heading-container h1 {
+        font-size: 2.3rem;
+    }
     
+    #heading-container h2 {
+        font-size: 1.1rem;
+    }
 
+    .article-container {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .image-heading-container {
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+
+    .paragraph-container {
+        grid-column: 1/2;
+        grid-row: 2/3;
+        margin-top: 2rem;
+    }
+}
