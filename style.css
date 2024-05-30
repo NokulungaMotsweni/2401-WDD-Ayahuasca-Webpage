@@ -142,6 +142,11 @@ p {
     max-width: 500px;
 }
 
+.line {
+    margin-top: 2rem;
+    width: 75%;
+    align-self: center;
+}
 /* Swap layout for even children */
 #main-content-container article.article-container:nth-child(even) .image-heading-container {
     grid-column: 2 / 3; /* Place the image-heading in the second column */
