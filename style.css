@@ -144,8 +144,11 @@ p {
 
 .line {
     margin-top: 2rem;
-    width: 75%;
     align-self: center;
+}
+
+.line img {
+    width: 5re;
 }
 /* Swap layout for even children */
 #main-content-container article.article-container:nth-child(even) .image-heading-container {
