@@ -1,2 +1,4 @@
 ﻿# 2401-WDD-Ayahuasca-Webpage
- https://nokulungamotsweni.github.io/Ayahuasca/
+ Nokulunga Motsweni
+ GitHub Repository: https://github.com/NokulungaMotsweni
+ GitHub Pages: https://nokulungamotsweni.github.io/Ayahuasca/
